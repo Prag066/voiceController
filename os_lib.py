@@ -4,6 +4,9 @@ class OsMethods:
     def poweroff(self):
         power_off = os.system("sudo poweroff")
         return power_off
+    def shutdown(self):
+        power_off = os.system("sudo shutdown now")
+        return power_off
 
     def wifi_password(self):
         wifi = os.system("MYCWD=`pwd`; cd /etc/NetworkManager/system-connections/ ; sudo grep -e '^psk=' * | less ; cd $MYCWD")
@@ -46,12 +49,23 @@ class OsMethods:
             os.system('xkill')
 
     def find_file(self,name=None,path='/home/prakhar/'):
+       # file = 'find {0}'.format(name)
+       # return os.system(file)
         os.chdir(path)
         for roots,dirs,files in os.walk(path):
             for file in files:
                 if name in file:
-                    return path+file
+                    return roots+"/"+file
                     break
+                else:
+                    pass
+    def find_dir(self,name=None,path='/home/prakhar/'):
+        os.chdir(path)
+        for roots,dirs,files in os.walk(path):
+            for dir in dirs:
+                if name in dir:
+                    print( roots+"/"+name)
+                    # break
                 else:
                     pass
 
@@ -64,5 +78,5 @@ class OsMethods:
 
 
 
-o=OsMethods()
-print(o.find_file('tst.py'))
+# o=OsMethods()
+# print(o.find_dir('kpi'))
