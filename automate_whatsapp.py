@@ -8,7 +8,7 @@ from selenium.common.exceptions import NoSuchElementException
 
 class whatsapp_web:
     def __init__(self):
-        self.driver = webdriver.Firefox(executable_path=r'C:\geckodriver\geckodriver')
+        self.driver = webdriver.Firefox(executable_path='/home/prakhar/voiceController/geckodriver')
         self.driver.get('https://web.whatsapp.com/')
 
     def send_msg(self, username=None):
