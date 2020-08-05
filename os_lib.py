@@ -8,7 +8,7 @@ class OsMethods:
         power_off = os.system("sudo shutdown now")
         return power_off
 
-    def wifi_password(self):
+    def wifi_password_list(self):
         wifi = os.system("MYCWD=`pwd`; cd /etc/NetworkManager/system-connections/ ; sudo grep -e '^psk=' * | less ; cd $MYCWD")
         return wifi
 
@@ -48,7 +48,7 @@ class OsMethods:
         else:
             os.system('xkill')
 
-    def find_file(self,name=None,path='/home/prakhar/'):
+    def find_file(self,name=None,path='/home/chiru/'):
        # file = 'find {0}'.format(name)
        # return os.system(file)
         os.chdir(path)
@@ -59,12 +59,15 @@ class OsMethods:
                     break
                 else:
                     pass
-    def find_dir(self,name=None,path='/home/prakhar/'):
+    def find_dir(self,name=None,path='/home/chiru/'):
         os.chdir(path)
         for roots,dirs,files in os.walk(path):
             for dir in dirs:
                 if name in dir:
-                    print( roots+"/"+name)
+                    print( roots+name+"/")
+                    my_path = roots+name+"/"
+                    command = 'xdg-open '+my_path
+                    os.system(command)
                     # break
                 else:
                     pass
@@ -79,4 +82,4 @@ class OsMethods:
 
 
 # o=OsMethods()
-# print(o.find_dir('kpi'))
+# print(o.find_dir('Downloads'))
