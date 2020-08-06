@@ -2,7 +2,7 @@ import os
 import subprocess
 import time_lib
 
-time_object = time_lib.Time_Date()
+time_object = time_lib.Time_DateMethod()
 
 greet_list = {
     'greet_basic':['hi jarvis','hello jarvis','hey jarvis'],

@@ -14,11 +14,11 @@ class OsMethods:
 
     def full_update(self):
         os.system("sudo apt-get update")
-        os.system("sudo apt-get upgrade")
+        os.system("sudo apt-get upgrade -y")
         return "updated"
 
     def apt_install(self,package):
-        my_package = 'sudo apt-get install {0}'.format(package)
+        my_package = 'sudo apt-get install {0} -y'.format(package)
         os.system(my_package)
         return 'installed {0}'.format(package)
 

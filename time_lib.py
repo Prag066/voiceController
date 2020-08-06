@@ -1,7 +1,7 @@
 import time
 import calendar
 
-class Time_Date:
+class Time_DateMethod:
     current_local_time = time.localtime(time.time())
     def current_time(self):
         localtime = time.asctime(self.current_local_time)
@@ -11,7 +11,7 @@ class Time_Date:
         year = self.current_local_time.tm_year
         mycalendar = calendar.month(year,month)
         return mycalendar
-    def sleep(self,time_for_sleep=2):
+    def sleep(self,time_for_sleep=4):
         time.sleep(time_for_sleep)
     def greet_main(self):
         h = self.current_local_time.tm_hour
