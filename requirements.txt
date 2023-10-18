@@ -2,4 +2,4 @@ PyAudio==0.2.11
 pyttsx3==2.90
 selenium==3.141.0
 SpeechRecognition==3.8.1
-urllib3==1.26.5
+urllib3==1.26.18
